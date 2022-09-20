@@ -1,0 +1,35 @@
+package calculadoras;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Calculadoras {
+
+	public static void main(String[] args) {
+		
+		double preco,desconto,precoFinal,troco,descontoAplicado;
+		Scanner Teclado = new Scanner(System.in);
+		DecimalFormat Formato= new DecimalFormat("#0,00");
+		
+		System.out.println(" Olá! digite o preço do produto:");
+		preco= Teclado.nextDouble();	
+		
+		pedeDouble(" Olá! digite o preço do produto:");
+								
+		
+		System.out.println("Agora digite o valor do desconto:");
+		desconto= Teclado.nextDouble();
+		
+		//preciso tratar essa excessão
+		
+		descontoAplicado= (desconto/100)* preco;
+		precoFinal= (preco-descontoAplicado);
+		troco= (preco- precoFinal);
+		
+		
+		System.out.println(" O preço original é de: "+ preco+" , com desconto de "+desconto);
+		System.out.println(" O preço final é de "+ precoFinal);
+		System.out.println("troco : "+ troco+ " reais");
+		Teclado.close();
+			
+		}
